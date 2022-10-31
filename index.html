@@ -5,139 +5,127 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="font_cqbiizu5og9/iconfont.css">
-    <title>CSS练习4——侧边栏</title>
+    <title>CSS练习5——动态搜索框</title>
+    <!-- 导入字体图标库 -->
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
     <style>
         * {
+            outline: none;
             padding: 0;
             margin: 0;
             text-decoration: none;
         }
 
         body {
-            background-color: rgb(209, 213, 219);
-            display: flex;
-            justify-content: space-evenly;
-            height: 100vh;
-            align-items: center;
-        }
-
-        .shell {
-            width: 100px;
-            height: 700px;
             display: flex;
             justify-content: center;
             align-items: center;
-            flex-direction: column;
-            background-color: rgb(17, 24, 39);
-            border-radius: 10px;
-            transition: .3s;
-            overflow: hidden;
+            height: 100vh;
+            background-color: #ffdcdc;
         }
 
-        .box {
-            display: block;
-            height: 15%;
-            width: 85%;
-            margin: 9px;
-            border-radius: 5px;
+        .shell {
             position: relative;
+            width: 1000px;
+            padding: 33px;
+            background-color: #ff7575;
+            border-radius: 20px;
+            box-shadow: 0 10px 50px #ff7575, 0 0 0 20px #fff;
+        }
+
+        .shell input {
+            width: 80%;
+            height: 100px;
+            color: #fff;
+            font: 300 80px '优设标题黑';
+            border: 0;
+            background-color: transparent;
+        }
+
+        .shell input::placeholder {
+            color: #8f36367e;
+        }
+
+        .shell a {
+            display: flex;
+            font-size: 120px;
+            position: absolute;
+            right: 60px;
+            top: 10px;
+            color: #fff;
+            width: 250px;
+            height: 150px;
+        }
+
+        .shell a .fa {
+            margin: 10px 28px;
             transition: .3s;
-            color: rgb(160, 160, 175);
-        }
-        .box i {
-            font-size: 60px;
-            position: absolute;
-            margin: 7px 0 0 13px;
         }
 
-        .box:nth-child(1)::before,
-        .box:nth-child(5)::before{
-            content: '';
-            display: block;
-            width: 100%;
-            height: 2px;
-            background-color: rgb(55, 65, 81);
-            position: absolute;
-            bottom: -10px;
-        }
-
-        .box span{
-            position: relative;
-            top: 22px;
-            left: 80px;
-            font: 500 20px '';
-            opacity: 0;
-            transition: .1s;
-        }
-        .shell:hover{
-            width: 270px;
-        }
-        .box:hover{
-            background-color: rgb(55, 65, 81);
-        }
-        .shell:hover span{
+        .shell a .fa-search {
+            transform: translateX(-80px);
             opacity: 1;
         }
-        .box:hover{
-            color: #fff;
+
+        .shell a .fa-hand-o-right {
+            transform: translateX(-100px);
+            opacity: 0;
         }
 
-        .shell:nth-child(2) {
-            background-color: rgb(243, 244, 246);
-        }
-        .shell:nth-child(2) .box:hover{
-            background-color: rgb(209, 213, 219);
-            color: rgb(241, 159, 159);
-        }
-        .shell:nth-child(2) .box{
-            color: #000;
+        .shell a:hover .fa-search {
+            transform: translateX(0);
+            opacity: 0;
         }
 
-        .shell:nth-child(3) {
-            background-color: rgb(49,46,129);
+        .shell a:hover .fa-hand-o-right {
+            transform: translateX(110px);
+            opacity: 1;
         }
-        .shell:nth-child(3) .box:hover{
-            background-color: rgb(67, 56, 202);
+
+        .shell a::before {
+            content: 'GO!';
+            position: absolute;
+            display: block;
+            font-size: 50px;
+            background-color: #ff7575;
+            padding: 5px 30px;
+            top: 50px;
+            right: -25px;
+            border-radius: 10px;
+            transition: .3s;
+            opacity: 0;
+            animation: box 1s infinite ease;
         }
-        .shell:nth-child(3) .box{
-            color: rgb(140, 120, 240);
+
+        .shell a:hover::before{
+            top: -115px;
+            opacity: 1;
+        }
+
+        @keyframes box {
+            0%{
+                transform: rotate(0deg);
+            }
+            33%{
+                transform: rotate(8deg);
+            }
+            66%{
+                transform: rotate(-8deg);
+            }
+            100%{
+                transform: rotate(0deg);
+            }
         }
     </style>
 </head>
 
 <body>
 <div class="shell">
-    <a href="#" class="box"><i class="iconfont icon-liebiao"></i><span>list</span></a>
-    <a href="#" class="box"><i class="iconfont icon-cangku"></i><span> Warehouse</span></a>
-    <a href="#" class="box"><i class="iconfont icon-zhuti_tiaosepan"></i><span>theme</span></a>
-    <a href="#" class="box"><i class="iconfont icon-qianbao"></i><span>wallet</span></a>
-    <a href="#" class="box"><i class="iconfont icon-tupian"></i><span>picture</span></a>
-    <a href="#" class="box"><i class="iconfont icon-erweima"></i><span>QR code</span></a>
-    <a href="#" class="box"><i class="iconfont icon-dunpaibaoxianrenzheng"></i><span>authentication</span></a>
-    <a href="#" class="box"><i class="iconfont icon-dengchu"></i><span>cancellation</span></a>
-</div>
-
-<div class="shell">
-    <a href="#" class="box"><i class="iconfont icon-liebiao"></i><span>list</span></a>
-    <a href="#" class="box"><i class="iconfont icon-cangku"></i><span> Warehouse</span></a>
-    <a href="#" class="box"><i class="iconfont icon-zhuti_tiaosepan"></i><span>theme</span></a>
-    <a href="#" class="box"><i class="iconfont icon-qianbao"></i><span>wallet</span></a>
-    <a href="#" class="box"><i class="iconfont icon-tupian"></i><span>picture</span></a>
-    <a href="#" class="box"><i class="iconfont icon-erweima"></i><span>QR code</span></a>
-    <a href="#" class="box"><i class="iconfont icon-dunpaibaoxianrenzheng"></i><span>authentication</span></a>
-    <a href="#" class="box"><i class="iconfont icon-dengchu"></i><span>cancellation</span></a>
-</div>
-
-<div class="shell">
-    <a href="#" class="box"><i class="iconfont icon-liebiao"></i><span>list</span></a>
-    <a href="#" class="box"><i class="iconfont icon-cangku"></i><span> Warehouse</span></a>
-    <a href="#" class="box"><i class="iconfont icon-zhuti_tiaosepan"></i><span>theme</span></a>
-    <a href="#" class="box"><i class="iconfont icon-qianbao"></i><span>wallet</span></a>
-    <a href="#" class="box"><i class="iconfont icon-tupian"></i><span>picture</span></a>
-    <a href="#" class="box"><i class="iconfont icon-erweima"></i><span>QR code</span></a>
-    <a href="#" class="box"><i class="iconfont icon-dunpaibaoxianrenzheng"></i><span>authentication</span></a>
-    <a href="#" class="box"><i class="iconfont icon-dengchu"></i><span>cancellation</span></a>
+    <input type="text" placeholder="Search">
+    <a href="#">
+        <i class="fa fa-hand-o-right"></i>
+        <i class="fa fa-search"></i>
+    </a>
 </div>
 </body>
 
