@@ -4,133 +4,80 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSS6-联系人列表</title>
+    <title>CSS7-新闻热榜</title>
     <style>
-        *{
-            padding: 0;
+        * {
             margin: 0;
-            background-color: rgb(140, 200, 200);
-        }
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        .shell{
-            background-color: rgb(185, 230, 235);
-            padding: 10px;
-            height: 450px;
-            width: 500px;
-            overflow-y: scroll;
-            border-radius: 10px;
-            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+            padding: 0;
         }
 
-        .title{
-            padding: 20px;
-            text-align: center;
-            font:100 44px '优设标题黑';
-            color: rgb(255, 255, 220);
+        .news {
+            width: 360px;
+            height: 400px;
+            background-color: #fff;
+            margin: 50px auto;
+            border: 1px solid gray;
+            padding: 15px;
         }
 
-        .box h2{
-            background-color: rgba(255, 255, 255, .7);
-            padding: 10px;
-            /* 添加粘滞定位 */
-            position: sticky;
-            top: 0;
-            color: rgb(120, 120, 250);
+        .news h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
         }
 
-        .box ul{
-            list-style: none;
-            font:100 13 '优设标题黑';
+        .news ol {
+            list-style: none;;
         }
 
-        .box ul li{
-            margin: 10px;
+        .news ol li {
+            height: 35px;
+            /*text-align: center;*/
+            line-height: 35px;
+            font-size: 16px;
+            border-bottom: 1px solid #ccc
+        }
+
+        .news ol li a {
+            text-decoration: none;
+            color: #333;
+
+        }
+
+        .news ol li a:hover {
+            color: red;
+        }
+
+        .news ol li span {
+            margin-right: 10px;
+            font-weight: bold;
+
+        }
+
+        .col1 {
+            color: brown;
+        }
+
+        .col2 {
+            color: blue;
+        }
+
+        .col3 {
+            color: #ec8c69;
         }
     </style>
 </head>
 <body>
-<div class="shell">
-    <h1 class="title">contacts</h1>
-    <div class="box">
-        <h2>A</h2>
-        <ul>
-            <li>Ariette</li>
-            <li>Acis</li>
-            <li>Annot</li>
-            <li>Abrao</li>
-            <li>alina</li>
-        </ul>
-    </div>
-
-    <div class="box">
-        <h2>B</h2>
-        <ul>
-            <li>Barbra</li>
-            <li>Byran</li>
-            <li>Baldie</li>
-            <li>Bohannon</li>
-        </ul>
-    </div>
-
-    <div class="box">
-        <h2>E</h2>
-        <ul>
-            <li>Eda</li>
-            <li>Emilie</li>
-            <li>Emmanurlle</li>
-        </ul>
-    </div>
-
-    <div class="box">
-        <h2>G</h2>
-        <ul>
-            <li>Glenda</li>
-            <li>Grace</li>
-        </ul>
-    </div>
-
-    <div class="box">
-        <h2>I</h2>
-        <ul>
-            <li>Ikun</li>
-            <li>Inness</li>
-            <li>Iduna</li>
-            <li>Ingeborg</li>
-            <li>isa</li>
-            <li>innes</li>
-            <li>issy</li>
-            <li>Iwan</li>
-        </ul>
-    </div>
-
-    <div class="box">
-        <h2>X</h2>
-        <ul>
-            <li>Xyleena</li>
-            <li>Xanthos</li>
-            <li>Xio</li>
-            <li>Xantara</li>
-            <li>Xayla</li>
-            <li>Xylona</li>
-        </ul>
-    </div>
-
-    <div class="box">
-        <h2>Z</h2>
-        <ul>
-            <li>Zenia</li>
-            <li>Zandra</li>
-            <li>Zaq</li>
-            <li>Zaavan</li>
-            <li>Zia</li>
-            <li>Zena</li>
-        </ul>
-    </div>
+<div class="news">
+    <h3>百度新闻热榜</h3>
+    <ol>
+        <li><a href=""><span class="col1">1</span>EDG与LNG赛前海报</a></li>
+        <li><a href=""><span class="col2">2</span>EDG与LNG赛前海报</a></li>
+        <li><a href=""><span class="col3">3</span>EDG与LNG赛前海报</a></li>
+        <li><a href=""><span>4</span>EDG与LNG赛前海报</a></li>
+        <li><a href=""><span>5</span>EDG与LNG赛前海报</a></li>
+        <li><a href=""><span>6</span>EDG与LNG赛前海报</a></li>
+        <li><a href=""><span>7</span>EDG与LNG赛前海报</a></li>
+    </ol>
 </div>
 </body>
 </html>
