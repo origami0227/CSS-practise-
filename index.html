@@ -4,80 +4,44 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSS7-新闻热榜</title>
+    <title>CSS8-商品展示</title>
     <style>
         * {
             margin: 0;
             padding: 0;
         }
 
-        .news {
-            width: 360px;
-            height: 400px;
-            background-color: #fff;
-            margin: 50px auto;
-            border: 1px solid gray;
-            padding: 15px;
+        .product {
+            border: 1px solid #ddd;
+            width: 268px;
+            /*height: 500px;*/
+            margin: 20px auto;
+            /*让图片水平居中*/
+            text-align: center;
+            padding: 10px;
         }
 
-        .news h3 {
-            font-size: 20px;
-            margin-bottom: 20px;
-        }
-
-        .news ol {
-            list-style: none;;
-        }
-
-        .news ol li {
-            height: 35px;
-            /*text-align: center;*/
-            line-height: 35px;
+        .describe {
+            color: #845f3f;
             font-size: 16px;
-            border-bottom: 1px solid #ccc
         }
 
-        .news ol li a {
-            text-decoration: none;
-            color: #333;
+        .product-text {
+            background-color: #f8f8f8;
+            height: 100px;
+            margin-top: 20px;
+            padding: 15px;
 
-        }
-
-        .news ol li a:hover {
-            color: red;
-        }
-
-        .news ol li span {
-            margin-right: 10px;
-            font-weight: bold;
-
-        }
-
-        .col1 {
-            color: brown;
-        }
-
-        .col2 {
-            color: blue;
-        }
-
-        .col3 {
-            color: #ec8c69;
         }
     </style>
 </head>
 <body>
-<div class="news">
-    <h3>百度新闻热榜</h3>
-    <ol>
-        <li><a href=""><span class="col1">1</span>EDG与LNG赛前海报</a></li>
-        <li><a href=""><span class="col2">2</span>EDG与LNG赛前海报</a></li>
-        <li><a href=""><span class="col3">3</span>EDG与LNG赛前海报</a></li>
-        <li><a href=""><span>4</span>EDG与LNG赛前海报</a></li>
-        <li><a href=""><span>5</span>EDG与LNG赛前海报</a></li>
-        <li><a href=""><span>6</span>EDG与LNG赛前海报</a></li>
-        <li><a href=""><span>7</span>EDG与LNG赛前海报</a></li>
-    </ol>
+<div class="product">
+    <img src="./sky.jpg" alt="" width="195px">
+    <p class="describe">一张精美插图</p>
+    <div class="product-text">
+        200元
+    </div>
 </div>
 </body>
 </html>
