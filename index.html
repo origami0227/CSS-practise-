@@ -11,37 +11,66 @@
             padding: 0;
         }
 
-        .product {
-            border: 1px solid #ddd;
-            width: 268px;
-            /*height: 500px;*/
-            margin: 20px auto;
-            /*让图片水平居中*/
-            text-align: center;
-            padding: 10px;
+        .slideshow-container {
+            max-width: 1000px;
+            position: relative;
+            margin: auto;
         }
 
-        .describe {
-            color: #845f3f;
-            font-size: 16px;
+        .mySlides {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: auto;
         }
 
-        .product-text {
-            background-color: #f8f8f8;
-            height: 100px;
-            margin-top: 20px;
-            padding: 15px;
+        /* 这里是图片的淡入淡出效果 */
+        .fade {
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
 
+        @keyframes fade {
+            from {
+                opacity: 0.4;
+            }
+            to {
+                opacity: 1;
+            }
         }
     </style>
 </head>
 <body>
-<div class="product">
-    <img src="./sky.jpg" alt="" width="195px">
-    <p class="describe">一张精美插图</p>
-    <div class="product-text">
-        200元
+<div class="slideshow-container">
+    <div class="mySlides fade">
+        <img src=./img1.JPG style="width:100%">
+    </div>
+    <div class="mySlides fade">
+        <img src="./ing2.PNG" style="width:100%">
+    </div>
+    <div class="mySlides fade">
+        <img src="img3.jpg" style="width:100%">
     </div>
 </div>
+<script>
+    var slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {
+            slideIndex = 1
+        }
+        slides[slideIndex - 1].style.display = "block";
+        setTimeout(showSlides, 1000); // 轮播间隔时间为3秒
+    }
+</script>
 </body>
 </html>
